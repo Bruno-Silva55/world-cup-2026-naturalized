@@ -44,7 +44,6 @@ corrections = {
     "Bosnia and Herzegovina": {"Wels": "Austria"},
     "Portugal": {"Benavente": "Portugal"},
     "Curacao": {"Willemstad": "Curacao"}
-
 }
 team_corrections = corrections.get(TEAM, {})
 
