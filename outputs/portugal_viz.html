@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bosnia and Herzegovina — World Cup 2026</title>
+<title>Portugal — World Cup 2026</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <style>
@@ -13,96 +13,104 @@
   #container { width: 1200px; height: 675px; position: relative; overflow: hidden; }
   #map-svg { width: 100%; height: 100%; }
 
-  /* Top left — flag + title + subtitle + group opponents */
-  #header { position: absolute; top: 24px; left: 24px; display: flex; align-items: flex-start; gap: 12px; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 10px 14px; backdrop-filter: blur(4px); }
-  #flag { border-radius: 3px; margin-top: 3px; }
+  /* Top left — team flag + name */
+  #header { position: absolute; top: 24px; left: 24px; display: flex; align-items: center; gap: 12px; }
+  #flag { border-radius: 3px; }
   #title { color: #ffffff; font-size: 22px; font-weight: 600; }
-  #subtitle { color: #8899bb; font-size: 13px; margin-top: 3px; }
-  #group-inline { display: flex; align-items: center; gap: 6px; margin-top: 6px; }
-  #group-label { color: #8899bb; font-size: 11px; }
-  .opponent-flag { border-radius: 2px; opacity: 0.9; }
+  #subtitle { color: #8899bb; font-size: 14px; margin-top: 4px; }
 
   /* Top right — big number stat */
-  #stats { position: absolute; top: 24px; right: 24px; text-align: right; background: rgba(0,0,0,0.5); border-radius: 8px; padding: 10px 14px; backdrop-filter: blur(4px); }
+  #stats { position: absolute; top: 24px; right: 24px; text-align: right; }
   #big-number { color: #FFCC00; font-size: 42px; font-weight: 700; line-height: 1; }
   #big-number span { color: #8899bb; font-size: 20px; font-weight: 400; }
   #big-label { color: #8899bb; font-size: 13px; margin-top: 4px; }
 
-  /* Right side — animated player cards */
+  /* Right side — animated player cards appear here */
   /* To move cards: adjust top/right values */
-  #cards { position: absolute; top: 120px; right: 24px; display: flex; flex-direction: column; gap: 6px; width: 320px; }
-  .card { background: rgba(0,0,0,0.6); border: 0.5px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 5px 10px; font-size: 11px; color: #fff; opacity: 0; transition: opacity 0.6s; backdrop-filter: blur(4px); }
-  .card .player-names { color: #ccd6e0; }
+  #cards { position: absolute; top: 110px; right: 24px; display: flex; flex-direction: column; gap: 6px; width: 320px; }
+  .card { background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 5px 10px; font-size: 11px; color: #fff; opacity: 0; transition: opacity 0.6s; }
+  .card .player-names { color: #aabbcc; }
 
-  /* Bottom left — social handles + data source */
-  #footer { position: absolute; bottom: 16px; left: 24px; display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.9); border-radius: 6px; padding: 6px 12px; }
-  #footer a { color: #111827; font-size: 11px; display: flex; align-items: center; gap: 5px; text-decoration: none; font-weight: 500; }
-  #footer img { opacity: 1; filter: brightness(0); }
-  #footer .source { color: #444444; font-size: 11px; }
-</style>
+  /* Bottom right — group stage opponent flags */
+  #group { position: absolute; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 8px; }
+  #group-label { color: #8899bb; font-size: 11px; margin-right: 4px; }
+  .opponent-flag { border-radius: 2px; opacity: 0.85; }
+
+  /* Bottom left — data source credit */
+    #footer { position: absolute; bottom: 16px; left: 24px; display: flex; align-items: center; gap: 16px; }
+    #footer a { color: #445566; font-size: 11px; display: flex; align-items: center; gap: 5px; text-decoration: none; }
+    #footer img { opacity: 1 ; filter: brightness(20); }</style>
 </head>
 <body>
 <div id="container">
   <svg id="map-svg" viewBox="0 0 1200 675"></svg>
 
-  <!-- Top left: flag + team name + subtitle + group opponents -->
+  <!-- Top left: flag + team name + subtitle -->
   <div id="header">
-    <img id="flag" src="https://flagcdn.com/32x24/ba.png" width="48" height="36">
+    <img id="flag" src="https://flagcdn.com/32x24/pt.png" width="48" height="36">
     <div>
-      <div id="title">Bosnia and Herzegovina</div>
+      <div id="title">Portugal</div>
       <div id="subtitle">World Cup 2026 — players born abroad</div>
-      <div id="group-inline">
-        <span id="group-label">Group B ·</span>
-      </div>
     </div>
   </div>
 
   <!-- Top right: main stat -->
   <div id="stats">
-    <div id="big-number">17<span>/26</span></div>
-    <div id="big-label">65% born outside Bosnia and Herzegovina</div>
+    <div id="big-number">2<span>/27</span></div>
+    <div id="big-label">7% born outside Portugal</div>
   </div>
 
   <!-- Player cards injected here by JavaScript -->
   <div id="cards"></div>
 
-  <!-- Bottom left: social + data credit -->
-  <div id="footer">
-    <a href="#">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" width="12" height="12">
-      @bruno_silva55
-    </a>
-    <a href="#">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" width="12" height="12">
-      Bruno-Silva55
-    </a>
-    <span class="source">· Data: Transfermarkt</span>
+  <!-- Bottom right: group opponents -->
+  <div id="group">
+    <span id="group-label">Group K</span>
   </div>
+
+  <!-- Bottom left: credit -->
+    <div id="footer">
+    <a href="#">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" width="12" height="12">
+        @bruno_silva55
+    </a>
+    <a href="#">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" width="12" height="12">
+        Bruno-Silva55
+    </a>
+    <span style="color:#2a3a4a; font-size:11px;">Data: Transfermarkt</span>
+    </div>
 </div>
 
 <script>
 // ── Data injected by Python ──────────────────────────────────
-const teamData = [{"country": "Germany", "players": ["Sead Kolasinac", "Dzenis Burnic", "Kerim Alajbegovic", "Ermedin Demirovic"]}, {"country": "Austria", "players": ["Osman Hadzikic", "Amar Dedi\u0107", "Ermin Mahmic"]}, {"country": "Sweden", "players": ["Dennis Hadzikadunic", "Benjamin Tahirovi\u0107", "Armin Gigovic"]}, {"country": "Serbia", "players": ["Jovo Luki\u0107", "Samed Bazdar"]}, {"country": "Croatia", "players": ["Ivan Basic"]}, {"country": "Denmark", "players": ["Amir Hadziahmetovic"]}, {"country": "Slovenia", "players": ["Tarik Muharemovi\u0107"]}, {"country": "Switzerland", "players": ["Haris Tabakovic"]}, {"country": "United States", "players": ["Esmir Bajraktarevic"]}];           // naturalized players grouped by birth country
+const teamData = [{"country": "Brazil", "players": ["Matheus Nunes"]}, {"country": "Switzerland", "players": ["Diogo Costa"]}];           // naturalized players grouped by birth country
 const countryCoords = {"Afghanistan": [67.7, 33.9], "Albania": [20.2, 41.2], "Algeria": [2.6, 28.0], "Angola": [17.9, -11.2], "Argentina": [-63.6, -38.4], "Armenia": [44.9, 40.1], "Australia": [133.7, -25.3], "Austria": [14.5, 47.5], "Azerbaijan": [47.6, 40.1], "Belgium": [4.5, 50.5], "Bolivia": [-64.7, -16.3], "Bosnia and Herzegovina": [17.7, 43.9], "Brazil": [-51.9, -14.2], "Bulgaria": [25.5, 42.7], "Cameroon": [12.3, 5.7], "Canada": [-96.8, 56.1], "Cape Verde": [-24.0, 16.0], "Chile": [-71.5, -35.7], "Colombia": [-74.3, 4.5], "Congo": [15.8, -0.2], "Croatia": [15.5, 45.1], "Cuba": [-79.5, 21.5], "Curacao": [-69.0, 12.2], "Czech Republic": [15.5, 49.8], "Czechia": [15.5, 49.8], "Democratic Republic of Congo": [23.6, -3.0], "Denmark": [10.0, 56.0], "Ecuador": [-78.2, -1.8], "Egypt": [30.8, 26.8], "England": [-1.5, 52.5], "Finland": [25.7, 61.9], "France": [2.2, 46.2], "Germany": [10.0, 51.0], "Ghana": [-1.0, 7.9], "Greece": [21.8, 39.1], "Guinea": [-11.3, 11.0], "Haiti": [-72.3, 18.9], "Hungary": [19.5, 47.2], "Iran": [53.7, 32.4], "Iraq": [43.7, 33.2], "Ireland": [-8.2, 53.4], "Israel": [34.8, 31.0], "Italy": [12.6, 41.9], "Ivory Coast": [-5.5, 7.5], "Jamaica": [-77.3, 18.1], "Japan": [138.2, 36.2], "Jordan": [36.2, 31.2], "Kosovo": [20.9, 42.6], "Mali": [-1.9, 17.6], "Mexico": [-102.5, 23.6], "Montenegro": [19.4, 42.7], "Morocco": [-7.1, 31.8], "Netherlands": [5.3, 52.1], "New Zealand": [172.5, -41.3], "Nigeria": [8.7, 9.1], "North Macedonia": [21.7, 41.6], "Norway": [8.5, 60.5], "Panama": [-80.1, 8.5], "Paraguay": [-58.2, -23.4], "Peru": [-75.0, -9.2], "Poland": [19.1, 51.9], "Portugal": [-8.2, 39.6], "Qatar": [51.2, 25.4], "Romania": [24.9, 45.9], "Russia": [37.6, 55.8], "Saudi Arabia": [45.1, 24.0], "Scotland": [-4.0, 56.8], "Senegal": [-14.4, 14.5], "Serbia": [21.0, 44.0], "Slovakia": [19.7, 48.7], "Slovenia": [14.9, 46.1], "South Africa": [25.1, -29.0], "South Korea": [127.8, 36.5], "Spain": [-3.7, 40.4], "Sweden": [15.0, 59.0], "Switzerland": [8.2, 46.8], "Tunisia": [9.6, 33.9], "Turkey": [35.2, 38.9], "Turkiye": [35.2, 38.9], "Ukraine": [31.4, 48.4], "United Kingdom": [-3.4, 55.4], "United States": [-95.0, 37.0], "Uruguay": [-56.0, -32.5], "Uzbekistan": [63.1, 41.4], "Venezuela": [-66.6, 6.4]};       // lon/lat for every country
+const europeanCountries = ["Albania", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Czechia", "Denmark", "England", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Kosovo", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "Russia", "Scotland", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Ukraine", "United Kingdom"]; // list of European country names
 const countryFlags = {"Afghanistan": "af", "Albania": "al", "Algeria": "dz", "Angola": "ao", "Argentina": "ar", "Armenia": "am", "Australia": "au", "Austria": "at", "Azerbaijan": "az", "Belgium": "be", "Bolivia": "bo", "Bosnia and Herzegovina": "ba", "Brazil": "br", "Bulgaria": "bg", "Cameroon": "cm", "Canada": "ca", "Cape Verde": "cv", "Chile": "cl", "Colombia": "co", "Congo": "cg", "Croatia": "hr", "Cuba": "cu", "Curacao": "cw", "Czech Republic": "cz", "Czechia": "cz", "Democratic Republic of Congo": "cd", "Denmark": "dk", "Ecuador": "ec", "Egypt": "eg", "England": "gb", "Finland": "fi", "France": "fr", "Germany": "de", "Ghana": "gh", "Greece": "gr", "Guinea": "gn", "Haiti": "ht", "Hungary": "hu", "Iran": "ir", "Iraq": "iq", "Ireland": "ie", "Israel": "il", "Italy": "it", "Ivory Coast": "ci", "Jamaica": "jm", "Japan": "jp", "Jordan": "jo", "Kosovo": "xk", "Mali": "ml", "Mexico": "mx", "Montenegro": "me", "Morocco": "ma", "Netherlands": "nl", "New Zealand": "nz", "Nigeria": "ng", "North Macedonia": "mk", "Norway": "no", "Panama": "pa", "Paraguay": "py", "Peru": "pe", "Poland": "pl", "Portugal": "pt", "Qatar": "qa", "Romania": "ro", "Russia": "ru", "Saudi Arabia": "sa", "Scotland": "gb", "Senegal": "sn", "Serbia": "rs", "Slovakia": "sk", "Slovenia": "si", "South Africa": "za", "South Korea": "kr", "Spain": "es", "Sweden": "se", "Switzerland": "ch", "Tunisia": "tn", "Turkey": "tr", "Turkiye": "tr", "Ukraine": "ua", "United Kingdom": "gb", "United States": "us", "Uruguay": "uy", "Uzbekistan": "uz", "Venezuela": "ve"};         // country name → flag code
-const teamCenter = [17.7, 43.9];
-const teamAtlasId = "070";     // world-atlas ID for the team's country
-const teamFlagCode = "ba";        // flag code for the team
-const nativePlayers = ["Nikola Vasilj", "Martin Zlomislic", "Nidal Celik", "Stjepan Radeljic", "Nikola Katic", "Nihad Mujakic", "Ivan Sunjic", "Amar Memi\u0107", "Edin Dzeko"];       // players born in the team's country
-const opponents = [{"team": "Canada", "flag": "ca"}, {"team": "Qatar", "flag": "qa"}, {"team": "Switzerland", "flag": "ch"}];        // group stage opponents
-const birthCountryAtlasIds = ["040", "191", "208", "276", "688", "705", "752", "756", "840"];
+const teamCenter = [-8.2, 39.6];         // map center [lon, lat]
+const teamAtlasId = "620";     // world-atlas ID for the team's country
+const teamFlagCode = "pt";        // flag code for the team
+const nativePlayers = ["Rui Silva", "Jos\u00e9 S\u00e1", "Ricardo Velho", "R\u00faben Dias", "Gon\u00e7alo In\u00e1cio", "Tom\u00e1s Ara\u00fajo", "Renato Veiga", "Nuno Mendes", "Diogo Dalot", "Jo\u00e3o Cancelo", "N\u00e9lson Semedo", "Vitinha", "R\u00faben Neves", "Sam\u00fa Costa", "Jo\u00e3o Neves", "Bruno Fernandes", "Francisco Trinc\u00e3o", "Bernardo Silva", "Rafael Le\u00e3o", "Gon\u00e7alo Guedes", "Pedro Neto", "Francisco Concei\u00e7\u00e3o", "Jo\u00e3o F\u00e9lix", "Gon\u00e7alo Ramos", "Cristiano Ronaldo"];       // players born in the team's country
+const opponents = [{"team": "Uzbekistan", "flag": "uz"}, {"team": "Colombia", "flag": "co"}, {"team": "Democratic Republic of Congo", "flag": "cd"}];        // group stage opponents
+const birthCountryAtlasIds = ["076", "756"]; // atlas IDs to highlight
 
 const width = 1200, height = 675;
 
 // ── Map setup ────────────────────────────────────────────────
 const svg = d3.select("#map-svg");
 
+// Projection controls the map view
+// .center([lon, lat]) — what's in the middle of the map
+// .scale() — zoom level (higher = more zoom)
+// .translate() — pixel offset [x, y] from center
 // Collect all coordinates that need to be visible
+// (team country + all birth countries)
 const allCoords = [teamCenter, ...Object.keys(countryCoords)
   .filter(c => teamData.map(d => d.country).includes(c))
   .map(c => countryCoords[c])];
 
-// Calculate bounding box with padding
+// Calculate bounding box
 const lons = allCoords.map(c => c[0]);
 const lats = allCoords.map(c => c[1]);
 const minLon = Math.min(...lons) - 5;
@@ -110,8 +118,8 @@ const maxLon = Math.max(...lons) + 5;
 const minLat = Math.min(...lats) - 5;
 const maxLat = Math.max(...lats) + 5;
 
-// fitExtent automatically centers and zooms to fit all countries
-// [[left, top], [right, bottom]] — leaves space for cards on the right
+// Use fitExtent to automatically center and zoom the map
+// The [margin, [width-margin, height-margin]] defines the padding
 const projection = d3.geoMercator()
   .fitExtent(
     [[80, 60], [width - 350, height - 60]],
@@ -129,10 +137,11 @@ const path = d3.geoPath().projection(projection);
 d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(world => {
   const countries = topojson.feature(world, world.objects.countries);
 
-  // Dark background
+  // Dark background rectangle
   svg.append("rect").attr("width", width).attr("height", height).attr("fill", "#0a0f1e");
 
-  // Flag pattern for team country fill
+  // Define flag pattern to fill the team's country shape
+  // Change href to use a different image for the team country fill
   const defs = svg.append("defs");
   const pattern = defs.append("pattern")
     .attr("id", "flag-pattern")
@@ -143,10 +152,10 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
     .attr("width", 300).attr("height", 200)
     .attr("preserveAspectRatio", "xMidYMid slice");
 
-  // Draw countries:
-  // - Team country → flag pattern fill
-  // - Birth countries → highlighted blue
-  // - Everything else → dark grey
+  // Draw all countries with color logic:
+  // - Team country → filled with flag pattern
+  // - Birth countries → highlighted blue (#1a3a6b)
+  // - Everything else → dark grey (#111827)
   svg.selectAll("path.land")
     .data(countries.features)
     .join("path")
@@ -156,36 +165,38 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
       if (birthCountryAtlasIds.includes(d.id)) return "#1a3a6b";
       return "#000000";
     })
-    .attr("stroke", d => d.id === teamAtlasId ? "#ffffff" : "#ffffff")
+    .attr("stroke", d => d.id === teamAtlasId ? "#ffffff" : "#FFFFFF")
     .attr("stroke-width", d => d.id === teamAtlasId ? 1 : 0.4);
 
-  const linesG = svg.append("g");
-  const teamXY = projection(teamCenter);
+  const linesG = svg.append("g"); // group for animated lines
+  const dotsG = svg.append("g");  // group for dots (currently unused)
+  const teamXY = projection(teamCenter); // pixel position of team country center
 
   // ── Animate lines and cards ───────────────────────────────
-  // Each country animates with 700ms stagger
-  // To change speed: adjust (i * 700) and duration(700)
+  // Each country animates in sequence with a 700ms delay between them
+  // To change animation speed: adjust the interval (i * 700) and duration (700)
   teamData.forEach((item, i) => {
     const coords = countryCoords[item.country];
-    if (!coords) return;
+    if (!coords) return; // skip if country not in metadata
 
-    const color = "#4a9eff";
-    const xy = projection(coords);
+    const color = "#4a9eff"; // line and card accent color — change here for different colors
+    const xy = projection(coords); // pixel position of birth country
 
     setTimeout(() => {
-      // Animated line from birth country to team country
+      // Draw animated line from birth country to team country
       const line = linesG.append("line")
         .attr("x1", xy[0]).attr("y1", xy[1])
-        .attr("x2", xy[0]).attr("y2", xy[1])
+        .attr("x2", xy[0]).attr("y2", xy[1]) // starts at origin
         .attr("stroke", color)
-        .attr("stroke-width", 1.5)
+        //.attr("stroke-width", 0.8 + item.players.length * 0.8) // thicker = more players
         .attr("stroke-opacity", 0.75);
 
+      // Animate line to team country position
       line.transition().duration(700)
         .attr("x2", teamXY[0])
         .attr("y2", teamXY[1]);
 
-      // Player card appears after line finishes
+      // After line finishes, add the player card
       setTimeout(() => {
         const card = document.createElement("div");
         card.className = "card";
@@ -193,37 +204,40 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w
         const flagImg = flagCode
           ? `<img src="https://flagcdn.com/20x15/${flagCode}.png" style="vertical-align:middle; margin-right:6px; border-radius:2px;">`
           : "";
+        // Card format: [flag] Country (N) · Player1, Player2, ...
         card.innerHTML = `${flagImg}<span style="color:${color}; font-weight:600;">${item.country} (${item.players.length})</span> <span class="player-names">· ${item.players.join(", ")}</span>`;
         document.getElementById("cards").appendChild(card);
-        setTimeout(() => card.style.opacity = "1", 50);
+        setTimeout(() => card.style.opacity = "1", 50); // fade in
       }, 700);
 
-    }, i * 700);
+    }, i * 700); // stagger each country by 700ms
   });
 
   // ── Native players card ───────────────────────────────────
-  // Appears last, highlighted in yellow
+  // Appears after all naturalized cards, with a 1s extra delay
+  // Highlighted in yellow to stand out from the blue cards
   setTimeout(() => {
     const card = document.createElement("div");
     card.className = "card";
     const flagImg = `<img src="https://flagcdn.com/20x15/${teamFlagCode}.png" style="vertical-align:middle; margin-right:6px; border-radius:2px;">`;
-    card.innerHTML = `${flagImg}<span style="color:#FFCC00; font-weight:600;">Born in Bosnia and Herzegovina (${nativePlayers.length})</span> <span class="player-names">· ${nativePlayers.join(", ")}</span>`;
-    card.style.borderColor = "rgba(255, 204, 0, 0.3)";
+    card.innerHTML = `${flagImg}<span style="color:#FFCC00; font-weight:600;">Born in Portugal (${nativePlayers.length})</span> <span class="player-names">· ${nativePlayers.join(", ")}</span>`;
+    card.style.borderColor = "rgba(255, 204, 0, 0.3)"; // yellow border
     document.getElementById("cards").appendChild(card);
     setTimeout(() => card.style.opacity = "1", 50);
-  }, 9 * 700 + 1000);
+  }, 2 * 700 + 1000);
 
-  // ── Group opponents flags in header ──────────────────────
-  const groupInline = document.getElementById("group-inline");
+  // ── Group stage opponent flags ────────────────────────────
+  // Renders flag images for each group opponent in the bottom right
+  const groupDiv = document.getElementById("group");
   opponents.forEach(opp => {
     if (opp.flag) {
       const img = document.createElement("img");
-      img.src = `https://flagcdn.com/24x18/${opp.flag}.png`;
-      img.title = opp.team;
+      img.src = `https://flagcdn.com/32x24/${opp.flag}.png`;
+      img.title = opp.team; // tooltip on hover
       img.className = "opponent-flag";
-      img.width = 24;
-      img.height = 18;
-      groupInline.appendChild(img);
+      img.width = 32;
+      img.height = 24;
+      groupDiv.appendChild(img);
     }
   });
 
