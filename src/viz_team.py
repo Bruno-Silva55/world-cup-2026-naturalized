@@ -30,7 +30,7 @@ groups_df = pd.read_csv("data/raw/groups.csv")
 # ============================================================
 # CONFIG — CHANGE THIS LINE TO SWITCH TEAMS
 # ============================================================
-TEAM = "Bosnia and Herzegovina"
+TEAM = "Curacao"
 
 # ============================================================
 # FILTER AND PROCESS TEAM DATA
@@ -42,7 +42,9 @@ team_df = df[df["national_team"] == TEAM].copy()
 # Add new corrections here as: "Team Name": {"City": "Correct Country"}
 corrections = {
     "Bosnia and Herzegovina": {"Wels": "Austria"},
-    "Portugal": {"Benavente": "Portugal"}
+    "Portugal": {"Benavente": "Portugal"},
+    "Curacao": {"Willemstad": "Curacao"}
+
 }
 team_corrections = corrections.get(TEAM, {})
 
