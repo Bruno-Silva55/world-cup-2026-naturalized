@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_855f05ec4d94ccd4d315d42ca6cd6812 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_855f05ec4d94ccd4d315d42ca6cd6812" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_855f05ec4d94ccd4d315d42ca6cd6812 = L.map(
+                "map_855f05ec4d94ccd4d315d42ca6cd6812",
+                {
+                    center: [43.9159, 17.6791],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f159d29bd3232ec6b388c7371daf2da0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f159d29bd3232ec6b388c7371daf2da0.addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+            var circle_marker_8670c7a9bdc1101076caa75e043fdfb5 = L.circleMarker(
+                [43.9159, 17.6791],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFCC00", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_346eecce80f22cbfe56d2a44569073e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_429de825d7f59de76ab1ac01f03d1b99 = $(`<div id="html_429de825d7f59de76ab1ac01f03d1b99" style="width: 100.0%; height: 100.0%;">Bosnia and Herzegovina 17 naturalized players</div>`)[0];
+                popup_346eecce80f22cbfe56d2a44569073e8.setContent(html_429de825d7f59de76ab1ac01f03d1b99);
+            
+        
+
+        circle_marker_8670c7a9bdc1101076caa75e043fdfb5.bindPopup(popup_346eecce80f22cbfe56d2a44569073e8)
+        ;
+
+        
+    
+    
+            var poly_line_724f54539e8518daaafe53f8a56a3373 = L.polyline(
+                [[47.59397, 14.12456], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_21c525bb19b7c32547f10b8e55f9e098 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f492c69aa9fd001eb3e60d492f0f00b = $(`<div id="html_1f492c69aa9fd001eb3e60d492f0f00b" style="width: 100.0%; height: 100.0%;">Austria: Osman Hadzikic, Amar Dedić, Ermin Mahmic</div>`)[0];
+                popup_21c525bb19b7c32547f10b8e55f9e098.setContent(html_1f492c69aa9fd001eb3e60d492f0f00b);
+            
+        
+
+        poly_line_724f54539e8518daaafe53f8a56a3373.bindPopup(popup_21c525bb19b7c32547f10b8e55f9e098)
+        ;
+
+        
+    
+    
+            var circle_marker_01b11ced5181e6dc80828fb399409d8d = L.circleMarker(
+                [47.59397, 14.12456],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_dd23ebe90705a91a74180d8abe69fbb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d4aeb5c1ba1cc8bce3862e83ee5218d = $(`<div id="html_2d4aeb5c1ba1cc8bce3862e83ee5218d" style="width: 100.0%; height: 100.0%;">Austria: Osman Hadzikic, Amar Dedić, Ermin Mahmic</div>`)[0];
+                popup_dd23ebe90705a91a74180d8abe69fbb3.setContent(html_2d4aeb5c1ba1cc8bce3862e83ee5218d);
+            
+        
+
+        circle_marker_01b11ced5181e6dc80828fb399409d8d.bindPopup(popup_dd23ebe90705a91a74180d8abe69fbb3)
+        ;
+
+        
+    
+    
+            var poly_line_4bf63691a81a788dab379463cb2e6879 = L.polyline(
+                [[46.1199444, 14.8153333], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_7a67ad5cb2339a3ab150de9cbcb8c8fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac375842dbfcb60d2ef8edf9192ae737 = $(`<div id="html_ac375842dbfcb60d2ef8edf9192ae737" style="width: 100.0%; height: 100.0%;">Slovenia: Tarik Muharemović</div>`)[0];
+                popup_7a67ad5cb2339a3ab150de9cbcb8c8fc.setContent(html_ac375842dbfcb60d2ef8edf9192ae737);
+            
+        
+
+        poly_line_4bf63691a81a788dab379463cb2e6879.bindPopup(popup_7a67ad5cb2339a3ab150de9cbcb8c8fc)
+        ;
+
+        
+    
+    
+            var circle_marker_c009e96cdc39f6a77c68177b8110a402 = L.circleMarker(
+                [46.1199444, 14.8153333],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_89a489992753db116aa76099c4cdb496 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca64112e4cd668d9bf529c79eef2d4c6 = $(`<div id="html_ca64112e4cd668d9bf529c79eef2d4c6" style="width: 100.0%; height: 100.0%;">Slovenia: Tarik Muharemović</div>`)[0];
+                popup_89a489992753db116aa76099c4cdb496.setContent(html_ca64112e4cd668d9bf529c79eef2d4c6);
+            
+        
+
+        circle_marker_c009e96cdc39f6a77c68177b8110a402.bindPopup(popup_89a489992753db116aa76099c4cdb496)
+        ;
+
+        
+    
+    
+            var poly_line_26eb120600669c977b69009fe7a37d37 = L.polyline(
+                [[51.1638175, 10.4478313], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 6.0}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_01d741c425896170bdee37d916521e3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7d51582a9192cf302cc65da5c03c778 = $(`<div id="html_c7d51582a9192cf302cc65da5c03c778" style="width: 100.0%; height: 100.0%;">Germany: Sead Kolasinac, Dzenis Burnic, Kerim Alajbegovic, Ermedin Demirovic</div>`)[0];
+                popup_01d741c425896170bdee37d916521e3f.setContent(html_c7d51582a9192cf302cc65da5c03c778);
+            
+        
+
+        poly_line_26eb120600669c977b69009fe7a37d37.bindPopup(popup_01d741c425896170bdee37d916521e3f)
+        ;
+
+        
+    
+    
+            var circle_marker_1f82f00c15c5c31f1239848914f70c62 = L.circleMarker(
+                [51.1638175, 10.4478313],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_ef12d03029c8c40deb4c20110e1c03a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6fc6cfec32e8ba620296c46ad3bd67d9 = $(`<div id="html_6fc6cfec32e8ba620296c46ad3bd67d9" style="width: 100.0%; height: 100.0%;">Germany: Sead Kolasinac, Dzenis Burnic, Kerim Alajbegovic, Ermedin Demirovic</div>`)[0];
+                popup_ef12d03029c8c40deb4c20110e1c03a9.setContent(html_6fc6cfec32e8ba620296c46ad3bd67d9);
+            
+        
+
+        circle_marker_1f82f00c15c5c31f1239848914f70c62.bindPopup(popup_ef12d03029c8c40deb4c20110e1c03a9)
+        ;
+
+        
+    
+    
+            var poly_line_9666afe541007487873c2938c154f439 = L.polyline(
+                [[59.6749712, 14.5208584], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_da0ba0180a6581dae0c4468122ee5871 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_201d46d0ecfa1fa6a862a3cbd2f472cb = $(`<div id="html_201d46d0ecfa1fa6a862a3cbd2f472cb" style="width: 100.0%; height: 100.0%;">Sweden: Dennis Hadzikadunic, Benjamin Tahirović, Armin Gigovic</div>`)[0];
+                popup_da0ba0180a6581dae0c4468122ee5871.setContent(html_201d46d0ecfa1fa6a862a3cbd2f472cb);
+            
+        
+
+        poly_line_9666afe541007487873c2938c154f439.bindPopup(popup_da0ba0180a6581dae0c4468122ee5871)
+        ;
+
+        
+    
+    
+            var circle_marker_1a5d8d753313e9c9628a00c0b4d18a6e = L.circleMarker(
+                [59.6749712, 14.5208584],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_f9e49c0b62ecff7c200cc472a5c045a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e7e50f38c7fbe934310c55c017e2def = $(`<div id="html_2e7e50f38c7fbe934310c55c017e2def" style="width: 100.0%; height: 100.0%;">Sweden: Dennis Hadzikadunic, Benjamin Tahirović, Armin Gigovic</div>`)[0];
+                popup_f9e49c0b62ecff7c200cc472a5c045a2.setContent(html_2e7e50f38c7fbe934310c55c017e2def);
+            
+        
+
+        circle_marker_1a5d8d753313e9c9628a00c0b4d18a6e.bindPopup(popup_f9e49c0b62ecff7c200cc472a5c045a2)
+        ;
+
+        
+    
+    
+            var poly_line_12dc40bb346e8e28e662d1cbfdfbcf21 = L.polyline(
+                [[55.670249, 10.3333283], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_5948ab3ba1eb06317aa460638a7b7466 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b5ff43a19bc25abd36c761113f35867 = $(`<div id="html_7b5ff43a19bc25abd36c761113f35867" style="width: 100.0%; height: 100.0%;">Denmark: Amir Hadziahmetovic</div>`)[0];
+                popup_5948ab3ba1eb06317aa460638a7b7466.setContent(html_7b5ff43a19bc25abd36c761113f35867);
+            
+        
+
+        poly_line_12dc40bb346e8e28e662d1cbfdfbcf21.bindPopup(popup_5948ab3ba1eb06317aa460638a7b7466)
+        ;
+
+        
+    
+    
+            var circle_marker_7b8e988e853398e6d1bcee410ed0197b = L.circleMarker(
+                [55.670249, 10.3333283],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_b3aebc36268cb1d00ce262d17981fa1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ea4876b4bc570e21918e1e3a960446f = $(`<div id="html_1ea4876b4bc570e21918e1e3a960446f" style="width: 100.0%; height: 100.0%;">Denmark: Amir Hadziahmetovic</div>`)[0];
+                popup_b3aebc36268cb1d00ce262d17981fa1d.setContent(html_1ea4876b4bc570e21918e1e3a960446f);
+            
+        
+
+        circle_marker_7b8e988e853398e6d1bcee410ed0197b.bindPopup(popup_b3aebc36268cb1d00ce262d17981fa1d)
+        ;
+
+        
+    
+    
+            var poly_line_9ca20e23421d02eeea5993971aaafda8 = L.polyline(
+                [[45.3658443, 15.6575209], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_a2920454f14c4672c2ee5398f10d50c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7a4579ebf8693a40a22de456b50f0f4 = $(`<div id="html_a7a4579ebf8693a40a22de456b50f0f4" style="width: 100.0%; height: 100.0%;">Croatia: Ivan Basic</div>`)[0];
+                popup_a2920454f14c4672c2ee5398f10d50c7.setContent(html_a7a4579ebf8693a40a22de456b50f0f4);
+            
+        
+
+        poly_line_9ca20e23421d02eeea5993971aaafda8.bindPopup(popup_a2920454f14c4672c2ee5398f10d50c7)
+        ;
+
+        
+    
+    
+            var circle_marker_21338dc7a9bc4af6d987a3ea4a7f668a = L.circleMarker(
+                [45.3658443, 15.6575209],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_4c317d2cd26cc30bdf42e60882dc6238 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd6d48ea3c4c9227a83e43e7d7c7cdfb = $(`<div id="html_cd6d48ea3c4c9227a83e43e7d7c7cdfb" style="width: 100.0%; height: 100.0%;">Croatia: Ivan Basic</div>`)[0];
+                popup_4c317d2cd26cc30bdf42e60882dc6238.setContent(html_cd6d48ea3c4c9227a83e43e7d7c7cdfb);
+            
+        
+
+        circle_marker_21338dc7a9bc4af6d987a3ea4a7f668a.bindPopup(popup_4c317d2cd26cc30bdf42e60882dc6238)
+        ;
+
+        
+    
+    
+            var poly_line_d99d992db6fa67d266ed7034ec823820 = L.polyline(
+                [[39.7837304, -100.445882], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_97ad05e9fe8ec3ea7e7c3ab1f748f2bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5562c57ca378f4d12d1b22e910769bf6 = $(`<div id="html_5562c57ca378f4d12d1b22e910769bf6" style="width: 100.0%; height: 100.0%;">United States: Esmir Bajraktarevic</div>`)[0];
+                popup_97ad05e9fe8ec3ea7e7c3ab1f748f2bb.setContent(html_5562c57ca378f4d12d1b22e910769bf6);
+            
+        
+
+        poly_line_d99d992db6fa67d266ed7034ec823820.bindPopup(popup_97ad05e9fe8ec3ea7e7c3ab1f748f2bb)
+        ;
+
+        
+    
+    
+            var circle_marker_ab6b6c6bce3cc9c3553ccf540f1745c8 = L.circleMarker(
+                [39.7837304, -100.445882],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_ce6948d988e814dc9adaa69bf9987e9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72e859178c9322e658b0a71264adaedc = $(`<div id="html_72e859178c9322e658b0a71264adaedc" style="width: 100.0%; height: 100.0%;">United States: Esmir Bajraktarevic</div>`)[0];
+                popup_ce6948d988e814dc9adaa69bf9987e9e.setContent(html_72e859178c9322e658b0a71264adaedc);
+            
+        
+
+        circle_marker_ab6b6c6bce3cc9c3553ccf540f1745c8.bindPopup(popup_ce6948d988e814dc9adaa69bf9987e9e)
+        ;
+
+        
+    
+    
+            var poly_line_e8517ddfdb51363da7a4599ab55d8c64 = L.polyline(
+                [[46.7985624, 8.2319736], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_8028f298605fc69b0bd6a73baeeadec7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67ac70866972f4b2dbc345a06f49b040 = $(`<div id="html_67ac70866972f4b2dbc345a06f49b040" style="width: 100.0%; height: 100.0%;">Switzerland: Haris Tabakovic</div>`)[0];
+                popup_8028f298605fc69b0bd6a73baeeadec7.setContent(html_67ac70866972f4b2dbc345a06f49b040);
+            
+        
+
+        poly_line_e8517ddfdb51363da7a4599ab55d8c64.bindPopup(popup_8028f298605fc69b0bd6a73baeeadec7)
+        ;
+
+        
+    
+    
+            var circle_marker_7e4ce47583e7331ba713f8ebd0be65e2 = L.circleMarker(
+                [46.7985624, 8.2319736],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_771d5f34729d87731de23d597efd57b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae3fb8e87dee8e4e18abf9c3586bb89e = $(`<div id="html_ae3fb8e87dee8e4e18abf9c3586bb89e" style="width: 100.0%; height: 100.0%;">Switzerland: Haris Tabakovic</div>`)[0];
+                popup_771d5f34729d87731de23d597efd57b8.setContent(html_ae3fb8e87dee8e4e18abf9c3586bb89e);
+            
+        
+
+        circle_marker_7e4ce47583e7331ba713f8ebd0be65e2.bindPopup(popup_771d5f34729d87731de23d597efd57b8)
+        ;
+
+        
+    
+    
+            var poly_line_2d8bc6160b1b4492e611307864e8e247 = L.polyline(
+                [[44.0243229, 21.0765743], [43.9159, 17.6791]],
+                {"bubblingMouseEvents": true, "color": "#FFCC00", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFCC00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.0}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_6317c5c3fe215639afe6ce7b9f46aa00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_594baa68268bd2aebfcd20e152769412 = $(`<div id="html_594baa68268bd2aebfcd20e152769412" style="width: 100.0%; height: 100.0%;">Serbia: Jovo Lukić, Samed Bazdar</div>`)[0];
+                popup_6317c5c3fe215639afe6ce7b9f46aa00.setContent(html_594baa68268bd2aebfcd20e152769412);
+            
+        
+
+        poly_line_2d8bc6160b1b4492e611307864e8e247.bindPopup(popup_6317c5c3fe215639afe6ce7b9f46aa00)
+        ;
+
+        
+    
+    
+            var circle_marker_2d5f3a25285f547790272e1ccfe07dbd = L.circleMarker(
+                [44.0243229, 21.0765743],
+                {"bubblingMouseEvents": true, "color": "#FF6B6B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6B6B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_855f05ec4d94ccd4d315d42ca6cd6812);
+        
+    
+        var popup_5b561e5fd2774234c1e86e99370d134a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d316427b2fa05c792a1b709561bcee4a = $(`<div id="html_d316427b2fa05c792a1b709561bcee4a" style="width: 100.0%; height: 100.0%;">Serbia: Jovo Lukić, Samed Bazdar</div>`)[0];
+                popup_5b561e5fd2774234c1e86e99370d134a.setContent(html_d316427b2fa05c792a1b709561bcee4a);
+            
+        
+
+        circle_marker_2d5f3a25285f547790272e1ccfe07dbd.bindPopup(popup_5b561e5fd2774234c1e86e99370d134a)
+        ;
+
+        
+    
+</script>
+</html>

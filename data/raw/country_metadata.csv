@@ -1,0 +1,86 @@
+name,flag_code,atlas_id,lon,lat,continent
+Afghanistan,af,4,67.7,33.9,Asia
+Albania,al,8,20.2,41.2,Europe
+Algeria,dz,12,2.6,28.0,Africa
+Angola,ao,24,17.9,-11.2,Africa
+Argentina,ar,32,-63.6,-38.4,South America
+Armenia,am,51,44.9,40.1,Asia
+Australia,au,36,133.7,-25.3,Oceania
+Austria,at,40,14.5,47.5,Europe
+Azerbaijan,az,31,47.6,40.1,Asia
+Belgium,be,56,4.5,50.5,Europe
+Bolivia,bo,68,-64.7,-16.3,South America
+Bosnia and Herzegovina,ba,70,17.7,43.9,Europe
+Brazil,br,76,-51.9,-14.2,South America
+Bulgaria,bg,100,25.5,42.7,Europe
+Cameroon,cm,120,12.3,5.7,Africa
+Canada,ca,124,-96.8,56.1,North America
+Cape Verde,cv,132,-24.0,16.0,Africa
+Chile,cl,152,-71.5,-35.7,South America
+Colombia,co,170,-74.3,4.5,South America
+Congo,cg,178,15.8,-0.2,Africa
+Croatia,hr,191,15.5,45.1,Europe
+Cuba,cu,192,-79.5,21.5,North America
+Curacao,cw,531,-69.0,12.2,North America
+Czech Republic,cz,203,15.5,49.8,Europe
+Czechia,cz,203,15.5,49.8,Europe
+Democratic Republic of Congo,cd,180,23.6,-3.0,Africa
+Denmark,dk,208,10.0,56.0,Europe
+Ecuador,ec,218,-78.2,-1.8,South America
+Egypt,eg,818,30.8,26.8,Africa
+England,gb,826,-1.5,52.5,Europe
+Finland,fi,246,25.7,61.9,Europe
+France,fr,250,2.2,46.2,Europe
+Germany,de,276,10.0,51.0,Europe
+Ghana,gh,288,-1.0,7.9,Africa
+Greece,gr,300,21.8,39.1,Europe
+Guinea,gn,324,-11.3,11.0,Africa
+Haiti,ht,332,-72.3,18.9,North America
+Hungary,hu,348,19.5,47.2,Europe
+Iran,ir,364,53.7,32.4,Asia
+Iraq,iq,368,43.7,33.2,Asia
+Ireland,ie,372,-8.2,53.4,Europe
+Israel,il,376,34.8,31.0,Asia
+Italy,it,380,12.6,41.9,Europe
+Ivory Coast,ci,384,-5.5,7.5,Africa
+Jamaica,jm,388,-77.3,18.1,North America
+Japan,jp,392,138.2,36.2,Asia
+Jordan,jo,400,36.2,31.2,Asia
+Kosovo,xk,0,20.9,42.6,Europe
+Mali,ml,466,-1.9,17.6,Africa
+Mexico,mx,484,-102.5,23.6,North America
+Montenegro,me,499,19.4,42.7,Europe
+Morocco,ma,504,-7.1,31.8,Africa
+Netherlands,nl,528,5.3,52.1,Europe
+New Zealand,nz,554,172.5,-41.3,Oceania
+Nigeria,ng,566,8.7,9.1,Africa
+North Macedonia,mk,807,21.7,41.6,Europe
+Norway,no,578,8.5,60.5,Europe
+Panama,pa,591,-80.1,8.5,North America
+Paraguay,py,600,-58.2,-23.4,South America
+Peru,pe,604,-75.0,-9.2,South America
+Poland,pl,616,19.1,51.9,Europe
+Portugal,pt,620,-8.2,39.6,Europe
+Qatar,qa,634,51.2,25.4,Asia
+Romania,ro,642,24.9,45.9,Europe
+Russia,ru,643,37.6,55.8,Europe
+Saudi Arabia,sa,682,45.1,24.0,Asia
+Scotland,gb,826,-4.0,56.8,Europe
+Senegal,sn,686,-14.4,14.5,Africa
+Serbia,rs,688,21.0,44.0,Europe
+Slovakia,sk,703,19.7,48.7,Europe
+Slovenia,si,705,14.9,46.1,Europe
+South Africa,za,710,25.1,-29.0,Africa
+South Korea,kr,410,127.8,36.5,Asia
+Spain,es,724,-3.7,40.4,Europe
+Sweden,se,752,15.0,59.0,Europe
+Switzerland,ch,756,8.2,46.8,Europe
+Tunisia,tn,788,9.6,33.9,Africa
+Turkey,tr,792,35.2,38.9,Asia
+Turkiye,tr,792,35.2,38.9,Asia
+Ukraine,ua,804,31.4,48.4,Europe
+United Kingdom,gb,826,-3.4,55.4,Europe
+United States,us,840,-95.0,37.0,North America
+Uruguay,uy,858,-56.0,-32.5,South America
+Uzbekistan,uz,860,63.1,41.4,Asia
+Venezuela,ve,862,-66.6,6.4,South America
